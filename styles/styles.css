@@ -1,3 +1,4 @@
+
 .slide-image-c{
     height: 500px;
     object-fit: cover;
@@ -12,4 +13,12 @@
 }
 .footer-link-c{
     color: #fff;
+}
+.card-link-c{
+    text-decoration: none;
+    color: #212529;
+}
+
+.cover-img-c{
+    width: 100%;
 }
