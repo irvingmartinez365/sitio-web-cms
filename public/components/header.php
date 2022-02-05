@@ -33,7 +33,7 @@
 		<header>
 			<nav class="navbar navbar-dark bg-dark navbar-expand-md">
 				<div class="container-fluid">
-					<span class="navbar-brand display-1">
+					<span class="navbar-brand display-1" translate="false">
 						<img src="assets/icon/icono.png" alt="" width="25px">
 						Digi-Book
 					</span>
@@ -42,12 +42,12 @@
 					</button>
 					<div class="collapse navbar-collapse d-md-flex justify-content-between" id="navbar-btn">
 						<ul class="navbar-nav">
-							<li class="nav-item"><a href="/cms/public/" class="nav-link <?php if($page == "") echo "active"?>">Inicio</a></li>
+							<li class="nav-item"><a href="../public/" class="nav-link <?php if($page == "") echo "active"?>">Inicio</a></li>
 							<li class="nav-item"><a href="leer.php" class="nav-link <?php if($page == "| Leer" || isset($text)) echo "active"?>">Leer</a></li>
 							<li class="nav-item"><a href="nosotros.php" class="nav-link <?php if($page == "| Nosotros") echo "active"?>">Nosotros</a></li>
 							
 						</ul>
-						<?php if(isset($_SESSION)){ ?>
+						<?php if(isset($_SESSION["username"]) && isset($_SESSION["image"])){ ?>
 							<a href="user.php">
 								<span class="porfile-name-c"><?=$_SESSION["username"]?></span>
 								<img class="porfile-c" src="<?= $_SESSION["image"]?>" alt="">

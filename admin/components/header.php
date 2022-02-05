@@ -32,5 +32,5 @@
             </div>
             <a class="nav-link  <?php if($page == "colores"){echo("active");}?>" href="colores.php"><i class="fas fa-palette"></i> Colores</a>
             <a class="nav-link mb-5  <?php if($page == "configuracion"){echo("active");}?>" href="configuracion.php"><i class="fas fa-cog"></i> Configuracion</a>
-            <a role="button" href="/cms/public/" class="btn btn-outline-primary">Ver sitio web</a>
+            <a role="button" href="../public/" class="btn btn-outline-primary">Ver sitio web</a>
         </nav>
