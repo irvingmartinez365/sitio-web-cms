@@ -22,3 +22,11 @@
 .cover-img-c{
     width: 100%;
 }
+.porfile-c{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+.porfile-name-c{
+    color: #eee;
+}

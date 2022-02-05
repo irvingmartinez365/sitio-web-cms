@@ -1,4 +1,6 @@
 <?php
+	    session_start();
+
 	$title = "";
 	if(!isset($text)){
 		$title = "Digi-Book ".$page;
@@ -40,12 +42,19 @@
 					</button>
 					<div class="collapse navbar-collapse d-md-flex justify-content-between" id="navbar-btn">
 						<ul class="navbar-nav">
-							<li class="nav-item"><a href="/cms/" class="nav-link <?php if($page == "") echo "active"?>">Inicio</a></li>
+							<li class="nav-item"><a href="/cms/public/" class="nav-link <?php if($page == "") echo "active"?>">Inicio</a></li>
 							<li class="nav-item"><a href="leer.php" class="nav-link <?php if($page == "| Leer" || isset($text)) echo "active"?>">Leer</a></li>
 							<li class="nav-item"><a href="nosotros.php" class="nav-link <?php if($page == "| Nosotros") echo "active"?>">Nosotros</a></li>
 							
 						</ul>
+						<?php if(isset($_SESSION)){ ?>
+							<a href="user.php">
+								<span class="porfile-name-c"><?=$_SESSION["username"]?></span>
+								<img class="porfile-c" src="<?= $_SESSION["image"]?>" alt="">
+							</a>
+						<?php } else {?>
 						<a href="login.php" class="btn btn-outline-success" role="button">Login</a>
+						<?php }?>
 					</div>
 					 
 				</div>
