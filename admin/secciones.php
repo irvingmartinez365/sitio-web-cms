@@ -1,37 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ediar secciones</title>
-    <!-- FONTAWESOME -->
-    <script defer src="https://kit.fontawesome.com/be7646c638.js" crossorigin="anonymous"></script>
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<?php $page = "secciones"; include('components/header.php') ?>
 
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="styles/styles.css">
-
-</head>
-<body>
-    <div class="flex-nowrap">
-        <nav class="nav nav-pills flex-column border nav-c" style="width: 25%; height: 100vh;">
-            <a class="nav-link" aria-current="page" href="/admin/">Dashboard</a>
-            <a class="nav-link" href="articulos.html">Articulos</a>
-            <div class="nav-item dropend">
-                <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="secciones.html" role="button" aria-expanded="false">Secciones</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="secciones.html#inicio">Inicio</a></li>
-                  <li><a class="dropdown-item" href="secciones.html#leer">Leer</a></li>
-                  <li><a class="dropdown-item" href="secciones.html#nosotros">Nosotros</a></li>
-                  <li><a class="dropdown-item" href="secciones.html#sdl">Seccion de lectura</a></li>
-                </ul>
-            </div>
-            <a class="nav-link" href="colores.html">Colores</a>
-            <a class="nav-link" href="configuracion.html">Configuracion</a>
-          </nav>
+            
         <div class="container-fuid container-c">
             <h1 class="display-4 text-center">Secciones</h1>
             <h2 class="h2" id="inicio">Inicio</h2>
@@ -46,10 +15,8 @@
             <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam voluptatibus officiis nisi odio sequi libero fuga. Quaerat blanditiis in quisquam expedita officia nemo praesentium delectus optio hic recusandae dolorum, unde, repellat mollitia. Voluptatum laboriosam provident incidunt explicabo in velit corrupti consequuntur eos beatae, sapiente, fugiat laudantium consectetur dicta tenetur, vel nulla voluptates facere commodi qui quisquam? Consequuntur natus assumenda eligendi harum laudantium quam exercitationem eius ex quia nam dignissimos quibusdam quod earum labore at excepturi, doloremque perferendis quae est. Nisi fugiat atque placeat aut doloremque, repudiandae molestiae dicta. Explicabo beatae fuga harum? Labore provident facilis hic amet saepe earum natus possimus reiciendis molestiae itaque dolor, quo molestias culpa ad odio perspiciatis dolorum consectetur est! Temporibus harum eaque necessitatibus adipisci saepe molestias quos voluptatem vel. Quaerat similique nemo voluptatibus possimus, sit in quasi culpa tempora labore consequuntur atque iure expedita doloribus eos qui aspernatur. Dolor nihil, eos temporibus saepe corporis vitae distinctio consequuntur omnis assumenda? Pariatur vel quaerat eligendi optio quam! Atque earum qui, sapiente temporibus odit maxime, necessitatibus itaque aliquid quam beatae recusandae, suscipit quis in voluptatum. Non architecto fugiat voluptas, explicabo officia soluta debitis illum commodi neque nam consequuntur numquam, iusto accusamus amet sint! Minus fugiat inventore voluptates harum eum veritatis, sit magni sunt provident, assumenda incidunt error quia, iusto quo repellendus beatae numquam nam dolorem quidem similique quisquam! Ipsa quod aperiam autem. Optio similique recusandae ea quibusdam quidem consequatur soluta commodi veritatis fuga mollitia repudiandae nihil eveniet, harum saepe vitae, delectus, odio officia sit aspernatur? Dicta eaque, debitis vel quaerat rem, fugiat suscipit error magnam eum explicabo temporibus molestiae illum consectetur assumenda, sequi expedita voluptas molestias nam eos neque a! Provident praesentium odit, eveniet aperiam corporis quia quas tenetur nobis distinctio tempore, qui dignissimos recusandae temporibus quod iusto quibusdam, molestiae eum eaque? Facilis veritatis, sit, neque reprehenderit, doloribus perspiciatis animi minima excepturi aliquam porro officiis quam amet quibusdam? Quae amet delectus beatae nesciunt deleniti odit provident. Qui et nobis cum rerum voluptas? Possimus delectus alias veritatis mollitia sequi eaque et odit quod. Maxime quibusdam consectetur earum quisquam quasi iure, voluptas dolor eum, at culpa suscipit sequi libero vero ex, fugiat impedit provident laudantium ab. Provident qui deserunt earum et quia ut, quasi sint repudiandae incidunt illum pariatur repellat, harum magni perspiciatis dolorem minima alias facere laboriosam, nihil ab!</p>
             <hr>
 
-            <h2 class="h2" id="sdl">Seccion de lectura</h2>
+            <h2 class="h2" id="seccion-de-lectura">Seccion de lectura</h2>
             <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias animi inventore provident optio ipsa atque, veritatis iste culpa nobis unde cupiditate quisquam explicabo dolorem molestiae laudantium voluptates odio architecto praesentium consequuntur facilis alias sunt quaerat. Culpa voluptas nesciunt quasi voluptatem. Excepturi provident, obcaecati ducimus cupiditate veniam porro illum modi consequatur, et dolores nesciunt quos alias nostrum perspiciatis optio fugit vitae repudiandae! Amet nostrum quo sapiente? Adipisci optio enim labore aliquam molestiae quos nam eos! Sint quas corporis nulla nam molestiae explicabo temporibus repellendus quia asperiores suscipit iste qui laboriosam porro, inventore commodi placeat consequuntur labore voluptatibus saepe, eos non. Dolor eius officia nisi, dolorem totam consectetur doloribus animi ea quis ipsam magni perspiciatis laborum corrupti tenetur rem modi, laudantium hic incidunt laboriosam quisquam similique voluptatem? Soluta quam facere quis in obcaecati. Laudantium repellat ullam adipisci temporibus rem a, fugit esse nihil saepe debitis! Eligendi minus cum numquam cumque veniam ipsam, nisi porro ullam reiciendis omnis atque illum neque aliquid, molestias esse quaerat voluptatibus tenetur iure aspernatur reprehenderit quisquam quibusdam modi beatae. Tenetur vero iure, sed nisi sint quis rem quasi consequatur dolore deserunt laborum dicta, veniam at ad beatae exercitationem, accusantium illo repellat assumenda distinctio delectus facere. Quasi similique debitis pariatur amet? Nihil voluptates delectus asperiores, quibusdam fugiat beatae sequi dicta harum exercitationem fuga quas numquam consequuntur perspiciatis, tenetur voluptatum corrupti excepturi officiis pariatur maiores architecto hic similique. Tenetur neque nam asperiores earum id omnis nostrum voluptates blanditiis saepe ipsa suscipit sequi, est, sed corporis dolore. Quo porro, perferendis perspiciatis eos sit pariatur nam tenetur est repudiandae incidunt nulla architecto necessitatibus sint voluptatibus asperiores consectetur corporis ea saepe modi ducimus harum error unde. Sequi cumque qui suscipit sed, perspiciatis officia facilis, iure dolorum adipisci possimus dignissimos consequuntur natus repellat amet, commodi inventore pariatur mollitia aliquid. Beatae voluptatem nesciunt earum, maxime nihil modi. Fugiat aperiam dolorum, explicabo tempore reprehenderit qui labore, accusantium cumque veritatis iste laudantium alias placeat culpa illo aliquam quidem, illum voluptate iusto. Blanditiis sed deserunt quasi quis libero facilis alias ipsa cum in quod. Sint quasi, doloremque at molestiae ex architecto repellat! Quaerat dolorum doloremque necessitatibus! Perspiciatis repellendus fugiat assumenda commodi, dolore voluptates, quam omnis quidem dolores a et, explicabo dolorem cupiditate amet culpa itaque. A aperiam suscipit porro quaerat nam cumque eos qui voluptatibus animi, praesentium delectus voluptates ipsum natus. Consequatur, facere nesciunt a fuga ea corrupti porro nisi debitis eaque, id nemo officiis perspiciatis distinctio sint atque. Ratione porro possimus similique praesentium laboriosam qui, labore deleniti iure. Ipsam consequuntur officiis voluptates exercitationem optio. Non officia cum repellat nemo ducimus harum totam reprehenderit, dolore dicta laborum itaque, commodi quis odio deleniti, consequuntur nulla est molestiae optio magnam sed blanditiis. Nisi quibusdam consequatur debitis fugit minus eum quisquam repellendus architecto nobis dolorum hic similique cum, aspernatur assumenda perspiciatis suscipit dignissimos fuga eos, blanditiis provident facilis voluptates quaerat? Commodi, repellendus tenetur saepe modi asperiores vero, cum quia quod obcaecati aperiam autem eaque. Veniam ipsam beatae atque fuga corrupti porro aliquam, ratione sit quam iusto odit cupiditate perferendis vitae! Possimus?</p>
         </div>
-    </div>
-    
-</body>
-</html>
+
+<?php include("components/footer.php") ?>
