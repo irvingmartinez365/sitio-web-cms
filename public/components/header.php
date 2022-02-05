@@ -1,6 +1,6 @@
 <?php
-	    session_start();
-
+	session_start();
+	$image = "";
 	$title = "";
 	if(!isset($text)){
 		$title = "Digi-Book ".$page;
@@ -34,7 +34,7 @@
 			<nav class="navbar navbar-dark bg-dark navbar-expand-md">
 				<div class="container-fluid">
 					<span class="navbar-brand display-1" translate="false">
-						<img src="assets/icon/icono.png" alt="" width="25px">
+						<img src="assets/icon/icono.png" alt="" class="brand-c">
 						Digi-Book
 					</span>
 					<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-btn" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,10 +47,15 @@
 							<li class="nav-item"><a href="nosotros.php" class="nav-link <?php if($page == "| Nosotros") echo "active"?>">Nosotros</a></li>
 							
 						</ul>
-						<?php if(isset($_SESSION["username"])){ ?>
+						<?php if(isset($_SESSION["username"])){ 
+								if(isset($_SESSION["image"])){
+									$image = $_SESSION["image"];
+								} else {
+									$image = "assets/img/profile.jpg";
+								}?>
 							<a href="user.php">
 								<span class="porfile-name-c"><?=$_SESSION["username"]?></span>
-								<img class="porfile-c" src="<?= $_SESSION["image"]?>" alt="">
+								<img class="porfile-c" src="<?=$image?>" alt="">
 							</a>
 						<?php } else {?>
 						<a href="login.php" class="btn btn-outline-success" role="button">Login</a>

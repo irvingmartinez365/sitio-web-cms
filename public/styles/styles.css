@@ -1,4 +1,6 @@
-
+.brand-c{
+    width: 25px;
+}
 .slide-image-c{
     height: 500px;
     object-fit: cover;
@@ -26,7 +28,14 @@
     width: 30px;
     height: 30px;
     border-radius: 100%;
+    object-fit: cover;
 }
 .porfile-name-c{
     color: #eee;
+}
+.profile-img-c{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 100%;
 }
