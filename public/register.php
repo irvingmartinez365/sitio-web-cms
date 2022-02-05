@@ -21,17 +21,21 @@
 	</head>
 	<body>
         <div class="row-sm-12">
-            <form method="POST" action="../app/validation.php" class="col-sm-4 px-4 border bg-light mx-auto mt-5">
-                <h1 class="h1 text-center">Log in</h1>
-
+            <form method="POST" action="../app/register.php" class="col-sm-4 px-4 border bg-light mx-auto mt-5">
+                <h1 class="h1 text-center">Resgistrate</h1>
+                <label for="email" class="form-label">Email</label>
+                <input name="email" id="email" type="email" placeholder="ejemplo@email.com" class="form-control mb-3">
                 <label for="usuario" class="form-label">Nombre de usuario</label>
                 <input name="user" id="usuario" type="text" class="form-control mb-3">
                 <label for="contraseña" class="form-label">Contraseña</label>
                 <input name="pass" id="contraseña" type="password" class="form-control mb-5">
                 <div class="container-fuid text-center ">
-                    <input name="submit" type="submit" value="Ingresar" class="btn btn-success mb-3 w-100">
+                    <input name="submit" type="submit" value="Unete" class="btn btn-success mb-3 w-100">
                 </div>
             </form>
         </div>
+        <?php if(isset($_SESSION["message"])){ ?>
+            <script>alert("<?= $_SESSION["message"]?>")</script>
+        <?php } ?>
     </body>
 </html>

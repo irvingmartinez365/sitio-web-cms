@@ -47,7 +47,7 @@
 							<li class="nav-item"><a href="nosotros.php" class="nav-link <?php if($page == "| Nosotros") echo "active"?>">Nosotros</a></li>
 							
 						</ul>
-						<?php if(isset($_SESSION["username"]) && isset($_SESSION["image"])){ ?>
+						<?php if(isset($_SESSION["username"])){ ?>
 							<a href="user.php">
 								<span class="porfile-name-c"><?=$_SESSION["username"]?></span>
 								<img class="porfile-c" src="<?= $_SESSION["image"]?>" alt="">

@@ -32,7 +32,11 @@ if(isset($_SESSION["username"])) {header("Location: index.php");} ?>
                 <div class="container-fuid text-center ">
                     <input name="submit" type="submit" value="Ingresar" class="btn btn-success mb-3 w-100">
                 </div>
+				<a href="register.php">Registrarse</a>
             </form>
         </div>
+		<?php if(isset($_SESSION["message"])){ ?>
+            <script>alert("<?= $_SESSION["message"]?>")</script>
+        <?php } ?>
     </body>
 </html>
