@@ -1,3 +1,6 @@
+:root{
+    --padding-image-coments: 50px;
+}
 .brand-c{
     width: 25px;
 }
@@ -40,11 +43,18 @@
     border-radius: 100%;
 }
 .profile-coment-c{
-    width: 50px;
-    height: 50px;
+    width: var(--padding-image-coments);
+    height: var(--padding-image-coments);
     border-radius: 100%;
     object-fit: cover;
 }
 .coment-interactions{
-    width: 25%;
+    padding-left: var(--padding-image-coments);
+    margin-left: 10px;
+}
+.btn-comentar{
+    margin-left: calc(var(--padding-image-coments) + 12px);
+}
+.block{
+    display: block;
 }
