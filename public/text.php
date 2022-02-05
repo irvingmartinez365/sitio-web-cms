@@ -28,6 +28,130 @@
         <h2 class="h2">Conclution</h2>
         <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, quo. Itaque adipisci, sed ea architecto autem excepturi quas id voluptate libero? Veritatis iste facilis asperiores odit vitae autem. Aperiam odit nemo voluptate veniam natus rem quod delectus dolores reprehenderit illo nostrum eum ratione odio magni repellat voluptates tempore unde tempora, fuga perferendis provident aut. Molestias tempore pariatur temporibus dicta libero odit accusantium eos veniam error, alias ipsam, ex soluta repellendus atque saepe vel! Totam modi accusantium molestiae facere rerum. Ad eaque animi nam quasi aliquid? Modi voluptate nesciunt quidem!</p>
     </article>
+    <hr>
+    <h2>N Comentarios: </h2>
+    <div class="coment-box-c ">
+        <!-- Icono a usar cuadno se aga clicken el corazon -->
+<!-- <i class="fas fa-heart"></i> -->
+
+        <div class="comment-item d-flex container-fluid mb-3">
+            <div class="align-self-center m-2">
+                <img src="<?=$image?>" alt="" class="profile-coment-c">
+
+            </div>
+            <div>
+                <div class="coment-info">
+                    <strong>Name user  <small>1231</small></strong>
+                </div>
+                <div class="coment-txt">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
+                </div>
+                <div class="coment-interactions row">
+                    <span class="col coments-likes">
+                        <button class="btn"><i class="far fa-heart"></i></button><span>2</span>
+                    </span>
+                    <span class="col coments-responses">
+                        <button class="btn"><i class="far fa-comment-alt"></i></button>
+                    </span>
+                    <span class="col coments-report">
+                     <button class="btn"><i class="far fa-flag"></i></button>
+
+                    </span>    
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="comment-item d-flex container-fluid mb-3">
+            <div class="align-self-center m-2">
+                <img src="<?=$image?>" alt="" class="profile-coment-c">
+
+            </div>
+            <div>
+                <div class="coment-info">
+                    <strong>Name user  <small>1231</small></strong>
+                </div>
+                <div class="coment-txt">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
+                </div>
+                <div class="coment-interactions row">
+                    <span class="col coments-likes">
+                        <button class="btn"><i class="far fa-heart"></i></button><span>2</span>
+                    </span>
+                    <span class="col coments-responses">
+                        <button class="btn"><i class="far fa-comment-alt"></i></button>
+                    </span>
+                    <span class="col coments-report">
+                     <button class="btn"><i class="far fa-flag"></i></button>
+
+                    </span>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="comment-item d-flex container-fluid mb-3">
+            <div class="align-self-center m-2">
+                <img src="<?=$image?>" alt="" class="profile-coment-c">
+
+            </div>
+            <div>
+                <div class="coment-info">
+                    <strong>Name user  <small>1231</small></strong>
+                </div>
+                <div class="coment-txt">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
+                </div>
+                <div class="coment-interactions row">
+                    <span class="col coments-likes">
+                        <button class="btn"><i class="far fa-heart"></i></button><span>2</span>
+                    </span>
+                    <span class="col coments-responses">
+                        <button class="btn"><i class="far fa-comment-alt"></i></button>
+                    </span>
+                    <span class="col coments-report">
+                     <button class="btn"><i class="far fa-flag"></i></button>
+
+                    </span>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="comment-item d-flex container-fluid mb-3">
+            <div class="align-self-center m-2">
+                <img src="<?=$image?>" alt="" class="profile-coment-c">
+
+            </div>
+            <div>
+                <div class="coment-info">
+                    <strong>Name user  <small>1231</small></strong>
+                </div>
+                <div class="coment-txt">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
+                </div>
+                <div class="coment-interactions row">
+                    <span class="col coments-likes">
+                        <button class="btn"><i class="far fa-heart"></i></button><span>2</span>
+                    </span>
+                    <span class="col coments-responses">
+                        <button class="btn"><i class="far fa-comment-alt"></i></button>
+                    </span>
+                    <span class="col coments-report">
+                     <button class="btn"><i class="far fa-flag"></i></button>
+
+                    </span>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+
+        
+    </div>
 </div>
 <?php include("components/footer.php")?>
 
