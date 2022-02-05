@@ -1,13 +1,12 @@
-<?php session_start(); 
-if(isset($_SESSION["username"])) {header("Location: index.php");} ?>
-
+<?php session_start();
+ if(isset($_SESSION["username"])) header("Location: index.php") ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="assets/icon/favicon.ico">
-		<title>Iniciar sesion</title>
+		<title>Registrarse</title>
 
 		<!-- FONTAWESOME -->
 		<script defer src="https://kit.fontawesome.com/be7646c638.js" crossorigin="anonymous"></script>
