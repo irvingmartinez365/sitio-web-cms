@@ -37,6 +37,6 @@ if(isset($_SESSION["username"])) {header("Location: index.php");} ?>
         </div>
 		<?php if(isset($_SESSION["message"])){ ?>
             <script>alert("<?= $_SESSION["message"]?>")</script>
-        <?php } ?>
+        <?php session_unset();} ?>
     </body>
 </html>
