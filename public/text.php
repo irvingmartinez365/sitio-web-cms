@@ -40,7 +40,7 @@
                     </div>
                     <div class=" container-fluid">
                         <div class="coment-info">
-                            <strong><?=$_SESSION["username"]?> <small>#<?=$_SESSION["id"]?></small>: </strong>
+                            <strong><?=$_SESSION["username"]?><small>#<?=$_SESSION["id"]?></small>: </strong>
                         </div>
                         <textarea name="coment" id="coment-txt" width="100%" class="form-control" rows="1"></textarea>
                     </div>
@@ -51,7 +51,7 @@
         </div>
         
         <div class="coment-box-c ">
-            <h2>N Comentarios: </h2>
+            <h2><span>N</span> Comentarios: </h2>
             
             <div class="comment-item container-fluid mb-3">
                 <div class="d-flex">
@@ -59,9 +59,9 @@
                         <img src="<?=$image?>" alt="" class="profile-coment-c">
 
                     </div>
-                    <div>
+                    <div class="coment-content">
                         <div class="coment-info">
-                            <strong>Name user  <small>1231</small></strong>
+                            <strong>Name user<span style="color: #444;">#1231</span></strong>
                         </div>
                         <div class="coment-txt">
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
@@ -74,7 +74,7 @@
                             <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span>2</span>
                         </span>
                         <span class="coments-responses">
-                            <button class="btn response" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></button>
+                            <a class="btn response" href="#user-coment" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></a>
                         </span>
                         <span class="coments-report">
                             <button class="btn report" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Reportar"><i class="far fa-flag"></i></button>
@@ -89,9 +89,9 @@
                         <img src="<?=$image?>" alt="" class="profile-coment-c">
 
                     </div>
-                    <div>
+                    <div class="coment-content">
                         <div class="coment-info">
-                            <strong>Name user  <small>1231</small></strong>
+                            <strong>Name user<span style="color: #444;">#1231</span></strong>
                         </div>
                         <div class="coment-txt">
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
@@ -104,7 +104,7 @@
                             <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span>2</span>
                         </span>
                         <span class="coments-responses">
-                            <button class="btn response" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></button>
+                            <a class="btn response" href="#user-coment" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></a>
                         </span>
                         <span class="coments-report">
                             <button class="btn report" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Reportar"><i class="far fa-flag"></i></button>
@@ -119,9 +119,9 @@
                         <img src="<?=$image?>" alt="" class="profile-coment-c">
 
                     </div>
-                    <div>
+                    <div class="coment-content">
                         <div class="coment-info">
-                            <strong>Name user  <small>1231</small></strong>
+                            <strong>Name user<span style="color: #444;">#1231</span></strong>
                         </div>
                         <div class="coment-txt">
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
@@ -134,7 +134,7 @@
                             <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span>2</span>
                         </span>
                         <span class="coments-responses">
-                            <button class="btn response" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></button>
+                            <a class="btn response" href="#user-coment" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></a>
                         </span>
                         <span class="coments-report">
                             <button class="btn report" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Reportar"><i class="far fa-flag"></i></button>
@@ -149,9 +149,9 @@
                         <img src="<?=$image?>" alt="" class="profile-coment-c">
 
                     </div>
-                    <div>
+                    <div class="coment-content">
                         <div class="coment-info">
-                            <strong>Name user  <small>1231</small></strong>
+                            <strong>Name user<span style="color: #444;">#1231</span></strong>
                         </div>
                         <div class="coment-txt">
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
@@ -164,7 +164,7 @@
                             <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span>2</span>
                         </span>
                         <span class="coments-responses">
-                            <button class="btn response" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></button>
+                            <a class="btn response" href="#user-coment" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></a>
                         </span>
                         <span class="coments-report">
                             <button class="btn report" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Reportar"><i class="far fa-flag"></i></button>
@@ -173,7 +173,8 @@
                     </div>
                 
             </div>
-                    
+
+            
         </div>
     </section>
     

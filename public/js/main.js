@@ -2,9 +2,10 @@ const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-tog
 const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
-
+const responseBtn = document.querySelectorAll('.response');
 const likeBtn = document.querySelectorAll('.like');
-console.log(likeBtn)
+const comentTxt = document.getElementById('coment-txt');
+
 likeBtn.forEach(btn => {
     
     btn.likeSwitch = false;
@@ -12,7 +13,7 @@ likeBtn.forEach(btn => {
         const parent = btn.parentElement;
         const brother = parent.querySelector('span');
         let num = Number(brother.textContent);
-        if(btn.likeSwitch){
+        if (btn.likeSwitch) {
             num--;
             btn.children[0].classList.remove('fas');
             btn.children[0].classList.add('far');
@@ -36,5 +37,16 @@ likeBtn.forEach(btn => {
 
         
         brother.textContent = num;
+    });
+});
+
+responseBtn.forEach(item => {
+    item.addEventListener('click', (e) => {
+        const coment = item.parentElement.parentElement.parentElement;
+        const username = coment.querySelector('.d-flex .coment-content .coment-info strong').textContent;
+        comentTxt.textContent = `RES -> ${username}: `;
+        comentTxt.focus();
+ 
     })
-})
+    
+});
