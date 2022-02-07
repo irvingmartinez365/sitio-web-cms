@@ -4,8 +4,9 @@ const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 })
 const responseBtn = document.querySelectorAll('.response');
 const likeBtn = document.querySelectorAll('.like');
-const comentTxt = document.getElementById('coment-txt');
+const reportBtn = document.querySelectorAll('.report');
 
+const comentTxt = document.getElementById('coment-txt');
 likeBtn.forEach(btn => {
     
     btn.likeSwitch = false;
@@ -40,9 +41,9 @@ likeBtn.forEach(btn => {
     });
 });
 
-responseBtn.forEach(item => {
-    item.addEventListener('click', (e) => {
-        const coment = item.parentElement.parentElement.parentElement;
+responseBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const coment = btn.parentElement.parentElement.parentElement;
         const username = coment.querySelector('.d-flex .coment-content .coment-info strong').textContent;
         comentTxt.textContent = `RES -> ${username}: `;
         comentTxt.focus();
@@ -50,3 +51,25 @@ responseBtn.forEach(item => {
     })
     
 });
+
+reportBtn.forEach(btn => {
+    btn.reportSwitch = false;
+    btn.addEventListener('click', () => {
+        if (btn.reportSwitch) {
+            btn.children[0].classList.remove('fas');
+            btn.children[0].classList.add('far');
+            btn.reportSwitch = false;
+        } else {
+            const coment = btn.parentElement.parentElement.parentElement;
+            btn.children[0].classList.remove('far');
+            btn.children[0].classList.add('fas');
+            
+            btn.reportSwitch = true;
+
+
+            alert("Se ha informado al administrador");
+
+        }
+        
+    })
+})
