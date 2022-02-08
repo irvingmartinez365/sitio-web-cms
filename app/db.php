@@ -11,6 +11,8 @@
 
     }catch (PDOException $e) {
         echo "Coneccion fallida: ".$e;
+        header("Location: ../public/server-error.php");
+        
     }
     
 ?>

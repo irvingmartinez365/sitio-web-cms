@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	$image = "";
 	$title = "";
 	if(!isset($text)){
 		$title = "Digi-Book ".$page;
@@ -48,15 +47,10 @@
 							<li class="nav-item"><a href="nosotros.php" class="nav-link <?php if($page == "| Nosotros") echo "active"?>">Nosotros</a></li>
 							
 						</ul>
-						<?php if(isset($_SESSION["username"])){ 
-								if(isset($_SESSION["image"])){
-									$image = $_SESSION["image"];
-								} else {
-									$image = "assets/img/profile.jpg";
-								}?>
+						<?php if(isset($_SESSION["username"])){ ?>
 							<a href="user.php">
 								<span class="porfile-name-c"><?=$_SESSION["username"]?></span>
-								<img class="porfile-c" src="<?=$image?>" alt="">
+								<img class="porfile-c" src="<?=$_SESSION["image"]?>" alt="">
 							</a>
 						<?php } else {?>
 						<a href="login.php" class="btn btn-outline-success" role="button">Login</a>

@@ -16,55 +16,85 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `article`
+-- Table structure for table `articulo`
 --
 
-DROP TABLE IF EXISTS `article`;
+DROP TABLE IF EXISTS `articulo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `article` (
-  `ID` int(3) NOT NULL AUTO_INCREMENT,
-  `TITLE` varchar(60) NOT NULL,
-  `URL` varchar(300) NOT NULL,
-  `DESCRIPTION` text,
-  PRIMARY KEY (`ID`)
+CREATE TABLE `articulo` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `title` varchar(40) NOT NULL,
+  `article_date` date NOT NULL,
+  `author` varchar(40) DEFAULT 'Anonimo',
+  `url` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `article`
+-- Dumping data for table `articulo`
 --
 
-LOCK TABLES `article` WRITE;
-/*!40000 ALTER TABLE `article` DISABLE KEYS */;
-/*!40000 ALTER TABLE `article` ENABLE KEYS */;
+LOCK TABLES `articulo` WRITE;
+/*!40000 ALTER TABLE `articulo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `articulo` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `users`
+-- Table structure for table `comentario`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `comentario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `ID` int(3) NOT NULL AUTO_INCREMENT,
-  `EMAIL` varchar(50) NOT NULL,
-  `PASSWORD` varchar(150) NOT NULL,
-  `USERNAME` varchar(40) NOT NULL,
-  `IMAGE` varchar(300) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+CREATE TABLE `comentario` (
+  `id_user` int(11) NOT NULL,
+  `id_article` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `coment_date` date NOT NULL,
+  `likes` smallint(6) DEFAULT '0',
+  `reports` smallint(6) DEFAULT '0',
+  PRIMARY KEY (`id_user`,`id_article`),
+  KEY `id_article` (`id_article`),
+  CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `usuario` (`id`),
+  CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`id_article`) REFERENCES `articulo` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `comentario`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'irvingmartinez030605@gmail.com','camellorojo','Irving Mendoza','https://picsum.photos/200/300'),(2,'hola@gmail.com','hola','hola',NULL),(3,'asd@gmail.com','no','si',NULL);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `comentario` WRITE;
+/*!40000 ALTER TABLE `comentario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comentario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuario` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `email` varchar(60) NOT NULL,
+  `username` varchar(40) NOT NULL,
+  `image` varchar(400) DEFAULT 'assets/img/profile.jpg',
+  `password` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuario`
+--
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -76,4 +106,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-08 11:37:38
+-- Dump completed on 2022-02-08 13:49:06

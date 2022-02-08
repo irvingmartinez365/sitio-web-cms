@@ -35,7 +35,7 @@
                 <label for="coment" class="h2 block">Comentar: </label>
                 <div class="d-flex">
                     <div class="align-self-center">
-                        <img src="<?=$image?>" alt="" class="profile-coment-c">
+                        <img src="<?=$_SESSION["image"]?>" alt="" class="profile-coment-c">
 
                     </div>
                     <div class=" container-fluid">
@@ -56,7 +56,7 @@
             <div class="comment-item container-fluid mb-3">
                 <div class="d-flex">
                     <div class="align-self-center m-2">
-                        <img src="<?=$image?>" alt="" class="profile-coment-c">
+                        <img src="<?=$_SESSION["image"]?>" alt="" class="profile-coment-c">
 
                     </div>
                     <div class="coment-content">

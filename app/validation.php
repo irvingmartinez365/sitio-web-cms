@@ -7,7 +7,7 @@
         $pass = $_POST["pass"];
 
 
-        $query = $conn->prepare("SELECT ID FROM USERS WHERE USERNAME='$user' AND PASSWORD='$pass'");
+        $query = $conn->prepare("SELECT id FROM USUARIO WHERE username='$user' AND password='$pass'");
         $query->execute();
         
         $response = $query->fetchAll();
@@ -16,7 +16,7 @@
             $ID = $response[0][0];
             $_SESSION["id"] = $ID;
        
-            $query = $conn->prepare("SELECT USERNAME, IMAGE FROM USERS WHERE ID=$ID");
+            $query = $conn->prepare("SELECT username, image FROM USUARIO WHERE id=$ID");
             $query->execute();
     
             $response = $query->fetchAll();
