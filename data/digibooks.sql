@@ -28,8 +28,10 @@ CREATE TABLE `articulo` (
   `article_date` date NOT NULL,
   `author` varchar(40) DEFAULT 'Anonimo',
   `url` varchar(500) NOT NULL,
+  `url_cover_img` varchar(500) DEFAULT 'assets/img/img-1.jpg',
+  `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +40,7 @@ CREATE TABLE `articulo` (
 
 LOCK TABLES `articulo` WRITE;
 /*!40000 ALTER TABLE `articulo` DISABLE KEYS */;
+INSERT INTO `articulo` VALUES (1,'8 Mejores formas de bajar de peso','2022-02-08','Anonimo','bajar-peso.html','assets/img/img-1.jpg',NULL),(2,'¿Que es la filosofia?','2022-02-09','Irving Martinez','filosofia.html','assets/img/img-1.jpg','Alguna vez te has preguntado ¿que es la filosofia?, ¿sirve de algo?, ¿como empiezo en ella?. Conoce quienes fueron Socrates, Platon, Aristoteles');
 /*!40000 ALTER TABLE `articulo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +88,7 @@ CREATE TABLE `usuario` (
   `image` varchar(400) DEFAULT 'assets/img/profile.jpg',
   `password` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,6 +97,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'irvingmartinez030605@gmail.com','Irving Mendoza','assets/img/profile.jpg','CAMELLOROJO');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -106,4 +110,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-08 13:49:06
+-- Dump completed on 2022-02-09 18:13:51

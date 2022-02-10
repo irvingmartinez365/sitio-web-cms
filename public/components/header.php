@@ -1,5 +1,7 @@
 <?php
-	session_start();
+	if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 	$title = "";
 	if(!isset($text)){
 		$title = "Digi-Book ".$page;
@@ -27,6 +29,10 @@
 		<!-- CUSTOM CSS AND JS-->
 		<link rel="stylesheet" href="styles/styles.css">
 		<script defer src="js/main.js"></script>
+
+		<?php if(isset($text)) {?> 
+		<script defer src="js/article.js"></script>
+		<?php }?>
 	</head>
 	<body>
 			
