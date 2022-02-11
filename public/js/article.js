@@ -33,6 +33,7 @@ const likeBtn = document.querySelectorAll('.like');
 const reportBtn = document.querySelectorAll('.report');
 
 const comentTxt = document.getElementById('coment-txt');
+
 likeBtn.forEach(btn => {
     
     btn.likeSwitch = false;
@@ -100,3 +101,8 @@ reportBtn.forEach(btn => {
     })
 })
 
+
+comentTxt.addEventListener('input', () => {
+    const newHeight = comentTxt.scrollHeight
+    comentTxt.style.height = `${newHeight}px`
+})
