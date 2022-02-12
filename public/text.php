@@ -70,33 +70,33 @@
                             $query -> execute();
                             $res = $query -> fetchAll();
 
-                            $comenUsername = $res[0][0];
-                            $comenImage = $res[0][1];
-                            echo $comenImage. "<br>". $comenUsername;
+                            $comentUsername = $res[0][0];
+                            $comentImage = $res[0][1];
                             $comentContentOutFormat = $item -> content;
                             $comentContent = str_replace("\n", "<br>", $comentContentOutFormat);
+                            $comentLikes = $item -> likes;
 
                             ?>
                             
                             <div class="comment-item container-fluid mb-3">
                                 <div class="d-flex">
                                     <div class="align-self-center m-2">
-                                        <img src="<?=$_SESSION["image"]?>" alt="" class="profile-coment-c">
+                                        <img src="<?=$comentImage?>" alt="" class="profile-coment-c">
 
                                     </div>
                                     <div class="coment-content">
                                         <div class="coment-info">
-                                            <strong>Name user<span style="color: #444;">#1231</span></strong>
+                                            <strong><?=$comentUsername?><span style="color: #444;">#<?=$comentUserID?></span></strong>
                                         </div>
                                         <div class="coment-txt">
-                                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
+                                            <?=$comentContent?>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="coment-interactions d-flex">
                                     <span class="coments-likes">
-                                        <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span>2</span>
+                                        <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span><?=$comentLikes?></span>
                                     </span>
                                     <span class="coments-responses">
                                         <a class="btn response" href="#user-coment" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></a>
