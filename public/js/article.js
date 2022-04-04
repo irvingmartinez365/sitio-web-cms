@@ -4,7 +4,6 @@ const id = articleContainer.getAttribute("data-article-id");
 
 const xhr = new XMLHttpRequest();
 
-/* xhr.responseType = "html"; */
 const host = "http://localhost/cms";
 xhr.open('GET', `${host}/app/article.php?id=${id}`);
 
@@ -41,14 +40,16 @@ likeBtn.forEach(btn => {
         const parent = btn.parentElement;
         const brother = parent.querySelector('span');
         let num = Number(brother.textContent);
+        let action = "";
+
+        const comentID = parent.parentElement.getAttribute("data-coment-id");
+
         if (btn.likeSwitch) {
             num--;
             btn.children[0].classList.remove('fas');
             btn.children[0].classList.add('far');
 
-
-            // Enviar informacion al servidor
-
+            action = "rest";           
 
             btn.likeSwitch = false;
         } else {
@@ -56,15 +57,21 @@ likeBtn.forEach(btn => {
             btn.children[0].classList.remove('far');
             btn.children[0].classList.add('fas');
 
-
-            // Enviar informacion al servidor
-
+            action = "add";
 
             btn.likeSwitch = true;
         }
 
-        
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', `${host}/app/like.php`);
+        xhr.addEventListener('load', () => {
+            console.log(xhr.response);
+        })
         brother.textContent = num;
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        xhr.send(`action=${action}&comentID=${comentID}`)
+
     });
 });
 

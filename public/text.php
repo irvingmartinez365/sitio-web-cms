@@ -94,7 +94,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="coment-interactions d-flex">
+                                <div class="coment-interactions d-flex" data-coment-id="<?=$item -> id?>">
                                     <span class="coments-likes">
                                         <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span><?=$comentLikes?></span>
                                     </span>
