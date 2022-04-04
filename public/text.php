@@ -24,7 +24,7 @@
         <?php
             if(isset($_SESSION["username"])){ ?>
                 <div class="conatiner coment-form mb-5">
-                    <form action="../app/comentar.php" method="POST" id="user-coment">
+                    <form action="../app/comentar.php?id=<?=$articleID?>" method="POST" id="user-coment">
                         <label for="coment" class="h2 block">Comentar: </label>
                         <div class="d-flex">
                             <div class="align-self-center">
@@ -35,7 +35,7 @@
                                 <div class="coment-info">
                                     <strong><?=$_SESSION["username"]?><small>#<?=$_SESSION["id"]?></small>: </strong>
                                 </div>
-                                <textarea spellcheck="false" name="coment" id="coment-txt" width="100%" class="form-control textarea-coment" rows="1"></textarea>
+                                <textarea name="coment" id="coment-txt" width="100%" class="form-control coment-area" rows="1"></textarea>
                             </div>
                         </div>
                         <input type="submit" name="comentar" value="Comentar" class="btn btn-outline-primary btn-comentar mt-2">
@@ -52,43 +52,68 @@
 
         <div class="coment-box-c ">
             <?php
-            /*
-                $conn->prepare("");
-
-                $countComents;
-            */
-            ?>
-            <h2><span><?=$countComents?></span> comentarios: </h2>
             
-            <div class="comment-item container-fluid mb-3">
-                <div class="d-flex">
-                    <div class="align-self-center m-2">
-                        <img src="<?=$_SESSION["image"]?>" alt="" class="profile-coment-c">
+                $query = $conn->prepare("SELECT * FROM COMENTARIO WHERE id_article=$articleID");
+                $query ->  execute();
+                $response = $query -> fetchAll(PDO::FETCH_OBJ);
 
-                    </div>
-                    <div class="coment-content">
-                        <div class="coment-info">
-                            <strong>Name user<span style="color: #444;">#1231</span></strong>
-                        </div>
-                        <div class="coment-txt">
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque voluptate debitis magnam esse tempora sint officia iste deleniti obcaecati voluptates sequi laudantium suscipit dolor placeat pariatur nulla, mollitia, libero a eos atque quis.</span>
-                        </div>
-                    </div>
-                </div>
+                $comentsNum = $query -> rowCount();
+                ?>
                 
-                <div class="coment-interactions d-flex">
-                    <span class="coments-likes">
-                        <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span>2</span>
-                    </span>
-                    <span class="coments-responses">
-                        <a class="btn response" href="#user-coment" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></a>
-                    </span>
-                    <span class="coments-report">
-                        <button class="btn report" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Reportar"><i class="far fa-flag"></i></button>
+            <h2 id="comentarios"><span><?=$comentsNum?></span> comentarios: </h2>
+            <?php
+                if($comentsNum > 0){
+                        foreach($response as $item){
+                            $comentUserID = $item -> id_user;
 
-                    </span>    
-                </div>          
-            </div>
+                            $query = $conn->prepare("SELECT username, image FROM USUARIO WHERE id=$comentUserID");
+                            $query -> execute();
+                            $res = $query -> fetchAll();
+
+                            $comentUsername = $res[0][0];
+                            $comentImage = $res[0][1];
+                            $comentContentOutFormat = $item -> content;
+                            $comentContent = str_replace("\n", "<br>", $comentContentOutFormat);
+                            $comentLikes = $item -> likes;
+
+                            ?>
+                            
+                            <div class="comment-item container-fluid mb-3">
+                                <div class="d-flex">
+                                    <div class="align-self-center m-2">
+                                        <img src="<?=$comentImage?>" alt="" class="profile-coment-c">
+
+                                    </div>
+                                    <div class="coment-content">
+                                        <div class="coment-info">
+                                            <strong><?=$comentUsername?><span style="color: #444;">#<?=$comentUserID?></span></strong>
+                                        </div>
+                                        <div class="coment-txt">
+                                            <?=$comentContent?>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="coment-interactions d-flex" data-coment-id="<?=$item -> id?>">
+                                    <span class="coments-likes">
+                                        <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span><?=$comentLikes?></span>
+                                    </span>
+                                    <span class="coments-responses">
+                                        <a class="btn response" href="#user-coment" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></a>
+                                    </span>
+                                    <span class="coments-report">
+                                        <button class="btn report" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Reportar"><i class="far fa-flag"></i></button>
+
+                                    </span>    
+                                </div>          
+                            </div>
+
+
+                        <?php
+                        } 
+                    }  
+            ?>
+            
         </div>
     </section>
 </div>
