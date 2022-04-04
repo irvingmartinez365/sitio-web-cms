@@ -35,7 +35,7 @@
                                 <div class="coment-info">
                                     <strong><?=$_SESSION["username"]?><small>#<?=$_SESSION["id"]?></small>: </strong>
                                 </div>
-                                <textarea spellcheck="false" name="coment" id="coment-txt" width="100%" class="form-control" rows="1"></textarea>
+                                <textarea spellcheck="false" name="coment" id="coment-txt" width="100%" class="form-control textarea-coment" rows="1"></textarea>
                             </div>
                         </div>
                         <input type="submit" name="comentar" value="Comentar" class="btn btn-outline-primary btn-comentar mt-2">

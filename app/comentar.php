@@ -1,8 +1,10 @@
 <?php
+    include("db.php");
     if(isset($_POST["comentar"])){
-        $coment = $_POST["coment"];
-        echo $coment;
+        
+        $conn->prepare("INSERT INTO ");
+
     }
-
-
+    
+    
 ?>

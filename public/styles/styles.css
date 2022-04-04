@@ -58,3 +58,7 @@
 .block{
     display: block;
 }
+.textarea-coment{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
