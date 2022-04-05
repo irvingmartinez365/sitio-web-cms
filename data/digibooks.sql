@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.29-MariaDB, for Win32 (AMD64)
+-- MySQL dump 10.13  Distrib 5.7.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: DIGIBOOKS
 -- ------------------------------------------------------
--- Server version	10.1.29-MariaDB
+-- Server version	5.7.33
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -57,14 +57,13 @@ CREATE TABLE `comentario` (
   `id_article` int(11) NOT NULL,
   `content` text NOT NULL,
   `coment_date` date NOT NULL,
-  `likes` smallint(6) DEFAULT '0',
   `reports` smallint(6) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`),
   KEY `id_article` (`id_article`),
   CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `usuario` (`id`),
   CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`id_article`) REFERENCES `articulo` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,8 +72,34 @@ CREATE TABLE `comentario` (
 
 LOCK TABLES `comentario` WRITE;
 /*!40000 ALTER TABLE `comentario` DISABLE KEYS */;
-INSERT INTO `comentario` VALUES (1,1,2,'Hola','2022-02-12',0,0);
+INSERT INTO `comentario` VALUES (1,1,2,'Hola','2022-02-12',0),(2,2,2,'Hola','2022-04-04',0),(3,2,2,'asdasd','2022-04-04',0);
 /*!40000 ALTER TABLE `comentario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `likes`
+--
+
+DROP TABLE IF EXISTS `likes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `likes` (
+  `id_user` int(11) NOT NULL,
+  `id_coment` int(11) NOT NULL,
+  PRIMARY KEY (`id_user`,`id_coment`),
+  KEY `id_coment` (`id_coment`),
+  CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `usuario` (`id`),
+  CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`id_coment`) REFERENCES `comentario` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `likes`
+--
+
+LOCK TABLES `likes` WRITE;
+/*!40000 ALTER TABLE `likes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `likes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -113,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-11 21:34:39
+-- Dump completed on 2022-04-04 17:00:14

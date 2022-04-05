@@ -34,24 +34,29 @@ const reportBtn = document.querySelectorAll('.report');
 const comentTxt = document.getElementById('coment-txt');
 
 likeBtn.forEach(btn => {
-    
-    btn.likeSwitch = false;
+
+
     btn.addEventListener('click', () => {
+         
+
         const parent = btn.parentElement;
         const brother = parent.querySelector('span');
         let num = Number(brother.textContent);
         let action = "";
-
+        
         const comentID = parent.parentElement.getAttribute("data-coment-id");
+        btn.likeSwitch = parent.parentElement.getAttribute("data-liked"); // true o false
 
-        if (btn.likeSwitch) {
+
+
+        if (btn.likeSwitch == 'true') {
             num--;
             btn.children[0].classList.remove('fas');
             btn.children[0].classList.add('far');
 
             action = "rest";           
 
-            btn.likeSwitch = false;
+            parent.parentElement.setAttribute("data-liked", "false");
         } else {
             num++;
             btn.children[0].classList.remove('far');
@@ -59,7 +64,7 @@ likeBtn.forEach(btn => {
 
             action = "add";
 
-            btn.likeSwitch = true;
+            parent.parentElement.setAttribute("data-liked", "true");
         }
 
         const xhr = new XMLHttpRequest();

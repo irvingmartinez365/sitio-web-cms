@@ -62,10 +62,19 @@
                 
             <h2 id="comentarios"><span><?=$comentsNum?></span> comentarios: </h2>
             <?php
-                if($comentsNum > 0){
-                        foreach($response as $item){
-                            $comentUserID = $item -> id_user;
+            
 
+                if($comentsNum > 0){
+                    $query = $conn->prepare("SELECT * FROM likes");
+                    $query -> execute();
+                    $res = $query -> fetchAll(PDO::FETCH_OBJ);
+                    $likesRes = $res;
+                        
+
+                        foreach($response as $item){
+                            $comentID = $item -> id;
+                            $comentUserID = $item -> id_user;
+                            
                             $query = $conn->prepare("SELECT username, image FROM USUARIO WHERE id=$comentUserID");
                             $query -> execute();
                             $res = $query -> fetchAll();
@@ -74,7 +83,21 @@
                             $comentImage = $res[0][1];
                             $comentContentOutFormat = $item -> content;
                             $comentContent = str_replace("\n", "<br>", $comentContentOutFormat);
-                            $comentLikes = $item -> likes;
+                            
+                            $query = $conn->prepare("SELECT * FROM likes where id_coment = '$comentID'");
+                            $query -> execute();
+                            $res = $query -> fetchAll(PDO::FETCH_OBJ);
+                            $liked = 0;
+                            foreach($res as $item){
+                                if($item -> id_user == $_SESSION["id"]){
+                                    $liked = 1;
+                                }
+                            }
+                            
+
+
+                            $comentLikes = $query -> rowCount();
+                            
 
                             ?>
                             
@@ -93,10 +116,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="coment-interactions d-flex" data-coment-id="<?=$item -> id?>">
+                              
+                                <div class="coment-interactions d-flex" data-coment-id="<?=$comentID?>" data-liked="<?php if($liked == 1) {
+                                            echo "true";
+                                        }  else {
+                                            echo "false";
+                                        } ?>">
                                     <span class="coments-likes">
-                                        <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="far fa-heart"></i></button><span><?=$comentLikes?></span>
+                                        <button class="btn like" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Me gusta"><i class="<?php if($liked == 1) {
+                                            echo "fas fa-heart";
+                                        }  else {
+                                            echo "far fa-heart"  ;
+                                        } ?>"></i></button><span><?=$comentLikes?></span>
                                     </span>
                                     <span class="coments-responses">
                                         <a class="btn response" href="#user-coment" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Responder"><i class="far fa-comment-alt"></i></a>
